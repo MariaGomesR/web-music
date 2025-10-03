@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SoundWave</title>
+  <link rel="shortcut icon" href="static/assets/tubs.png" type="image/x-icon">
+  <link rel="stylesheet" href="static/style/estilo.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" id="topLink">Mais tocadas</a></li>
+      <li><a href="#" id="historyLink">Histórico</a></li>
+    </ul>
+  </nav>
+
+ 
+  <div class="rabisco">
+    <img src="static/assets/rabisco.png" alt="">
+  </div>
+
+  <div class="tudo">
+    <header>
+      <div>
+      <img class="logo" src="static/assets/logo (3).png" alt="logo">
+    </div>
+      <div class="vinil">
+        <img src="static/assets/vinil2.png" alt="Vinil">
+      </div>
+
+      <div class="server-input">
+        <input
+          id="serverUrl"
+          type="url"
+          inputmode="url"
+          placeholder="Digite a URL do servidor (ex.: http://10.144.227.61)"
+          autocomplete="off"
+          spellcheck="false"
+          value="http://10.144.227.61"
+        />
+        <button id="connectBtn" type="button">Conectar</button>
+      </div>
+    </header>
+
+    <div id="status">Digite a URL do servidor e clique em Conectar</div>
+
+    <!-- Container da lista de músicas -->
+    <div id="songListContainer">
+      <ul id="songList"></ul>
+    </div>
+
+    <div id="nowPlaying">Nenhuma música tocando</div>
+
+    <!-- Controles do player -->
+    <div class="custom-player">
+      <button id="playPause">▶</button>
+      <input type="range" id="progress" value="0" min="0" step="1">
+      <span id="timeDisplay">0:00</span>
+      <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+    </div>
+
+    <!-- Elemento de áudio -->
+    <audio id="audio" preload="none"></audio>
+  </div>
+
+  <!-- Painéis -->
+  <div id="historyPanel">
+    <h3>Histórico</h3>
+    <ul id="historyList"></ul>
+  </div>
+ 
+  <div id="topPanel">
+    <h3>Mais Tocadas</h3>
+    <ul id="topList"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
